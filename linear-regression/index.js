@@ -18,7 +18,7 @@ const rl = readline.createInterface({
 
 csv()
     .fromFile(csvFilePath)
-    .subscribe(jsonObj => {
+    .(jsonObj => {
         csvData.push(jsonObj);
     })
     .on('done', () => {
