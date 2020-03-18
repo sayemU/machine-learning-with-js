@@ -25,6 +25,14 @@ const rl = readline.createInterface({
         dressData(); // To get data points from JSON Objects
         performRegression(); 
     });*/
+function onComplete(a){ // When the code completes, do this
+    alert(a);
+}
+function onError(err) {
+      //Handle error
+    }
+
+
 
 const request=require('request')
 //const csv=require('csvtojson')
