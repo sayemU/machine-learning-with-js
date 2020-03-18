@@ -40,7 +40,9 @@ const request=require('request')
 csv()
 .fromStream(request.get('https://github.com/sayemU/machine-learning-with-js/tree/master/linear-regression/advertising.csv'))
 .subscribe((json)=>{
-	return new Promise((resolve,reject)=>{
+	return new Promise((resolve, reject) => {
+  		setTimeout(() => reject(new Error("Whoops!")), 1000);
+
 		// long operation for each json e.g. transform / write into database.
 	})
 },onError,onComplete);
