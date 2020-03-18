@@ -30,7 +30,7 @@ const request=require('request')
 const csv=require('csvtojson')
 
 csv()
-.fromStream(request.get('C:\Users\voujon\machine-learning-with-js\linear-regression\advertising.csv'))
+.fromStream(request.get('https://github.com/sayemU/machine-learning-with-js/tree/master/linear-regression/advertising.csv'))
 .subscribe((json)=>{
 	return new Promise((resolve,reject)=>{
 		// long operation for each json e.g. transform / write into database.
