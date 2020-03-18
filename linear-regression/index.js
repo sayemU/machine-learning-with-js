@@ -16,15 +16,30 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-csv()
+/*csv()
     .fromFile(csvFilePath)
-    subscribe.(jsonObj => {
+     subscribe.(jsonObj => {
         csvData.push(jsonObj);
     })
     .on('done', () => {
         dressData(); // To get data points from JSON Objects
         performRegression(); 
-    });
+    });*/
+
+const request=require('request')
+const csv=require('csvtojson')
+
+csv()
+.fromStream(request.get('C:\Users\voujon\machine-learning-with-js\linear-regression\advertising.csv'))
+.subscribe((json)=>{
+	return new Promise((resolve,reject)=>{
+		// long operation for each json e.g. transform / write into database.
+	})
+},onError,onComplete);
+
+
+
+
 
 function performRegression() {
     regressionModel = new SLR(X, y); // Train the model on training data
